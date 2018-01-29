@@ -72,6 +72,8 @@ spec:
             - "--provisioner=csi-vsphere"
             - "--csi-address=$(ADDRESS)"
             - "--v=5"
+            - "--volume-name-prefix=csivol"
+            - "--volume-name-uuid-length=10"
           env:
             - name: ADDRESS
               value: /var/run/csi/csi.sock
@@ -87,7 +89,7 @@ spec:
             - name: X_CSI_DEBUG
               value: "true"
             - name: X_CSI_VSPHERE_DATASTORE
-              value: datastore1
+              value: datastore
           volumeMounts:
             - name: socket-dir
               mountPath: /var/run/csi
