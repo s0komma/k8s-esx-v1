@@ -1,0 +1,14 @@
+[Unit]
+Description=CSI vSphere Node Driver
+
+[Service]
+Environment=CSI_ENDPOINT=unix:///var/lib/kubelet/plugins/com.thecodeteam.vsphere/csi.sock
+Environment=X_CSI_DEBUG=true
+Environment=X_CSI_PRIVATE_MOUNT_DIR=/var/lib/kubelet/plugins/com.thecodeteam.vsphere/disks
+Environment=X_CSI_VSPHERE_DATASTORE=datastore
+ExecStart=/usr/bin/csi-vsphere --csi-address=/var/lib/kubelet/plugins/com.thecodeteam.vsphere/csi.sock --v=5
+Restart=on-failure
+RestartSec=5
+
+[Install]
+WantedBy=multi-user.target
