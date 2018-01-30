@@ -1,3 +1,25 @@
+Kubernetes on the VMWare ESX
+
+This tutorial will walk you through setting up Kubernetes on VMWare ESX VM's with persistant storage. 
+
+Target Audience
+
+The target audience for this tutorial is someone planning to support a production Kubernetes cluster and wants to understand how everything fits together. After completing this tutorial I encourage you to automate away the manual steps presented in this guide.
+
+This tutorial is for educational purposes only. There is much more configuration required for a production ready cluster.
+Cluster Details
+
+Kubernetes 1.9.2
+Docker 1.12.6
+etcd 3.0.17
+CNI Based Networking
+Secure communication between all components (etcd, control plane, workers)
+Default Service Account and Secrets
+
+Platform:
+VMWare ESXi on 3 servers and VM's created one on each.
+Datastore for persistant storage across servers
+
 # k8s-esx
 Kubernetes on ESX VM with Persistent Storage.
 
@@ -15,3 +37,5 @@ Kubernetes on ESX VM with Persistent Storage.
    - Apply pvc.yaml
    - Apply redis.yaml
    - Kill the redis as it reloated to another node with same volume
+
+Cleaning Up
