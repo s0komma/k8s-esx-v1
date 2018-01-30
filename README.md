@@ -12,6 +12,6 @@ esxcli software vib install -v /pbedadh/VMWare_bootbank_esx-vmdkops-service_0.20
 5. Master Node-
      kubectl apply -f csi-vsphere-controller.yaml
 6. Test redis container with PV
-   a. apply pvc.yaml
-   b. apply redis.yaml
-   c. Kill the redis as it reloated to another node with same volume
+   - Apply pvc.yaml
+   - Apply redis.yaml
+   - Kill the redis as it reloated to another node with same volume
