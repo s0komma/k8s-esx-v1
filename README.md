@@ -10,9 +10,11 @@ The target audience for this tutorial is someone planning to create a Kubernetes
 - CNI Based Networking
 - CSI Based Storage
 
-# Platform:
-VMWare ESXi on 3 servers and VM's created one on each.
-Datastore for persistant storage across servers
+# Platform
+- VMWare ESXi6.5 on 3 physical servers and VM's created one on each vSphere.
+- Datastore for persistant storage which is accessable from all 3 vSphere's(like VSAN or NFS volume or SAN storage)
+
+# Steps for the test
 
 1. Install VMWare_bootbank_esx-vmdkops-service_0.20.15f5e1d-0.0.1.vib on all the ESXi Servers.
     - esxcli software vib install -v /tmp/VMWare_bootbank_esx-vmdkops-service_0.20.15f5e1d-0.0.1.vib --no-sig-check
@@ -27,6 +29,6 @@ Datastore for persistant storage across servers
 6. Test redis container with PV
    - Apply pvc.yaml
    - Apply redis.yaml
-   - Kill the redis as it reloated to another node with same volume
+   - Kill the redis as it relocates to another node with same volume.
 
-Cleaning Up
+
