@@ -30,5 +30,3 @@ The target audience for this tutorial is someone planning to create a Kubernetes
    - Apply pvc.yaml
    - Apply redis.yaml
    - Kill the redis as it relocates to another node with same volume.
-
-
